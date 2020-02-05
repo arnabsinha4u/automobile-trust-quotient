@@ -26,6 +26,7 @@ When cars are sold:
 
 # The Implementation
 + **Data Check**
+
 <img src="automobile-trust-quotient-data-entry.jpg" width="400"> <img src="automobile-trust-quotient-data-retrieval.jpg" width="400">
 
 + **Proof of entry in Etherium Blockchain**
