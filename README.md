@@ -31,12 +31,12 @@ Retrieval of publicly available car maintenance details and perform storage and 
 
 <img src="images/automobile-trust-quotient-data-entry.jpg" width="400"> <img src="images/automobile-trust-quotient-data-retrieval.jpg" width="400">
 
-+ **Proof of entry in Etherium Blockchain**
++ **Proof of entry in Ethereum Blockchain**
 <img src="images/automobile-trust-quotient-data-on-blockchain.jpg" width="400">
 
 # Technology Stack
 - Smart Contracts
 - Solidity
-- Etherium Blockchain (public Testnet)
+- Ethereum Blockchain (public Testnet)
 - Cars Netherlands API’s by RDW
 - Javascript, CSS, HTML
