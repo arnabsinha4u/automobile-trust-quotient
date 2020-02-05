@@ -25,14 +25,11 @@ When cars are sold:
  3) Authenticity of parts cannot always be determined
 
 # The Implementation
-+ **Data Entry**
-<img src="automobile-trust-quotient-data-entry.jpg" width="700">
-
-+ **Data Retrieval**
-<img src="automobile-trust-quotient-data-retrieval.jpg" width="700">
++ **Data Check**
+<img src="automobile-trust-quotient-data-entry.jpg" width="400"> <img src="automobile-trust-quotient-data-retrieval.jpg" width="400">
 
 + **Proof of entry in Etherium Blockchain**
-<img src="automobile-trust-quotient-data-on-blockchain.jpg" width="700">
+<img src="automobile-trust-quotient-data-on-blockchain.jpg" width="400">
 
 # Technology Stack
 - Smart Contracts
