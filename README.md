@@ -25,7 +25,10 @@ When cars are sold:
  3) Authenticity of parts cannot always be determined
 
 # The Implementation (with usecase)
-Retrieval of publicly available car maintenance details and perform storage and retrieval of information from a public distributed ledger (blockchain) with payment using ETH (Ether)
+- Retrieval of publicly available car maintenance details and perform storage and retrieval of information from a public distributed ledger (blockchain) with payment with ETH (Ether).
+- Scope is limited to the automobiles in The Netherlands and the API's of RDW is used
+- Once the platform is democratized, further countries and parties can be added
+- A smart contract has been created with the shared code on the test ethereum blockchain ```https://rinkeby.etherscan.io/tx/``` and the address for the same is in the html code as ```0x18bb19a41ce9e53f556ca03f05b860fa879457f3```
 
 + **Data Check**
 
@@ -33,6 +36,9 @@ Retrieval of publicly available car maintenance details and perform storage and 
 
 + **Proof of entry in Ethereum Blockchain**
 <img src="images/automobile-trust-quotient-data-on-blockchain.jpg" width="400">
+
+# How to extend/modify this
+The smart contract code is shared, feel free to fork it, create your new implementation and create a new contract on the blockchain. Once this is complete, replace the new generated address in the html file with the existing smart contract address ```0x18bb19a41ce9e53f556ca03f05b860fa879457f3```. Modify the HTML code as needed. You can also change the test blockchain network from ```https://rinkeby.etherscan.io/tx/``` to others as deemded suitable.
 
 # Technology Stack
 - Smart Contracts
