@@ -24,7 +24,9 @@ When cars are sold:
  2) Lot of elements are fixed momentarily to just sell the car
  3) Authenticity of parts cannot always be determined
 
-# The Implementation
+# The Implementation (with usecase)
+Retrieval of publicly available car maintenance details and perform storage and retrieval of information from a public distributed ledger (blockchain) with payment using ETH (Ether)
+
 + **Data Check**
 
 <img src="images/automobile-trust-quotient-data-entry.jpg" width="400"> <img src="images/automobile-trust-quotient-data-retrieval.jpg" width="400">
