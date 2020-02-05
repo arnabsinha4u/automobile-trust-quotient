@@ -7,8 +7,8 @@ Once implemented:
 Buyers can: Trust the information as it cannot be tampered and is available real time
 Sellers can: Go to the market directly and get a good price, Keeping up the health of the car for a sustainable environment
 
-# What problem this innovation was trying to solve?
-The automobile market for second hand cars is enormous. This idea addresses two customer viewpoints, one the buyer, other the seller.
+# What problem this innovation is trying to solve?
+From a retail consumer standpoint: The automobile market for second hand cars is enormous. This idea addresses two customer viewpoints, one the buyer, other the seller.
 
 Today, when people go to buy a car:
  1) They look at the service book for a car for the service history
@@ -23,3 +23,20 @@ When cars are sold:
  1) Garages charge a percentage of the selling price of the car to the seller
  2) Lot of elements are fixed momentarily to just sell the car
  3) Authenticity of parts cannot always be determined
+
+# The Implementation
++ **Data Entry**
+<img src="automobile-trust-quotient-data-entry.jpg" width="700">
+
++ **Data Retrieval**
+<img src="automobile-trust-quotient-data-retrieval.jpg" width="700">
+
++ **Proof of entry in Etherium Blockchain**
+<img src="automobile-trust-quotient-data-on-blockchain.jpg" width="700">
+
+# Technology Stack
+- Smart Contracts
+- Solidity
+- Etherium Blockchain (public Testnet)
+- Cars Netherlands API’s by RDW
+- Javascript, CSS, HTML
