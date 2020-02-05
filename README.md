@@ -28,7 +28,10 @@ When cars are sold:
 - Retrieval of publicly available car maintenance details and perform storage and retrieval of information from a public distributed ledger (blockchain) with payment with ETH (Ether).
 - Scope is limited to the automobiles in The Netherlands and the API's of RDW is used
 - Once the platform is democratized, further countries and parties can be added
-- A smart contract has been created with the shared code on the test ethereum blockchain ```https://rinkeby.etherscan.io/tx/``` and the address for the same is in the html code as ```0x18bb19a41ce9e53f556ca03f05b860fa879457f3```
+- A smart contract has been created with the shared code on the test ethereum blockchain:
+```base_trx_add = "https://rinkeby.etherscan.io/tx/";```
+the address for the same is in the html code as:
+```CarTrustQuotientContract.at('0x18bb19a41ce9e53f556ca03f05b860fa879457f3');```
 
 + **Data Check**
 
