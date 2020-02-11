@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial;
+            font-size: 17px;
+
+            /* 100% fluid width background */
+            background-image: url("images/hd-digital-car-image.jpg");
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: #464646;
+        }
+
+        header>h1 {
+            padding: 0;
+            margin: 0;
+            line-height: 60px;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+        }
+
+        .container {
+            margin-top: 60px;
+            min-height: 300px;
+
+            color: #fff;
+            position: relative;
+            margin: 0 auto;
+        }
+
+        .left,
+        .right {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            margin: 10px;
+        }
+
+
+        .bottom {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .tablink {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 25%;
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
+        }
+
+        .tablink:hover {
+            background-color: #777;
+        }
+
+        /* Style the tab content */
+
+        .tabcontent {
+            color: white;
+            display: none;
+            padding: 50px;
+            text-align: center;
+            animation: fadeEffect 1s;
+            /* Fading effect takes 1 second */
+        }
+
+        /* Go from zero to full opacity */
+
+        @keyframes fadeEffect {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        #AbtPrj {
+            background-color: rgba(255, 0, 0, 0.4);
+        }
+
+        #AbtMe {
+            background-color: rgba(0, 128, 0, 0.5);
+        }
+
+        #Artifacts {
+            background-color: rgba(0, 0, 255, 0.4);
+        }
+
+        #Others {
+            background-color: rgba(255, 165, 0, 0.4);
+        }
+    </style>
+    <title>Car TrustQuotient</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+    <header>
+        <h1 class="text-center">
+            Automobile's Trust Quotient
+        </h1>
+    </header>
+    <div class="container">
+        <div class="row">
+            <!-- right pane -->
+            <div class="col-md-4 left clearfix">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label for="car" class="col-xs-4">Enter car number</label>
+                        <div class="col-xs-8">
+                            <input type="text" class="form-control" placeholder="Car License Plate" id="car" />
+                        </div>
+                    </div>
+
+                    <div class="col-xs-8 col-xs-offset-4">
+                        <button type="button" onclick="getCarDetails()" class="btn btn-primary">Get details</button>
+                        <button type="button" onclick="setCarDetails()" class="btn btn-primary">Set details</button>
+                    </div>
+
+                </form>
+               </div>
+            <!-- left pane -->
+            <div class="col-md-6 right clearfix">
+                <p style="
+    text-align: center;
+    font-size: large;
+">Details to be populated here</p>
+                <div id="generic_return"></div>
+                <p id="trx_add"></p>
+
+            </div>
+        </div>
+
+    </div>
+
+    <div class="bottom">
+        <div id="AbtPrj" class="tabcontent">
+            <h3>About the initiative</h3>
+            <p>Track and trace the history of an automobile which will aid buyers to take informed decision and sellers to position their automobile better in the marketplace</p>
+        </div>
+
+        <div id="AbtMe" class="tabcontent">
+            <h3>AbtMe</h3>
+            <p>About me</p>
+        </div>
+
+        <div id="Artifacts" class="tabcontent">
+            <h3>Artifacts</h3>
+            <p>Artifacts of the project</p>
+        </div>
+
+        <div id="Others" class="tabcontent">
+            <h3>Others</h3>
+            <p>Others information.</p>
+        </div>
+
+        <button class="tablink" onclick="openCity('AbtPrj', this, 'red')" id="defaultOpen">About Project</button>
+        <button class="tablink" onclick="openCity('AbtMe', this, 'green')">About Me</button>
+        <button class="tablink" onclick="openCity('Artifacts', this, 'blue')">Project Artifacts</button>
+        <button class="tablink" onclick="openCity('Others', this, 'orange')">Other details</button>
+
+    </div>
+
+
+</body>
+<script>
+
+    function openCity(cityName, elmnt, color) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].style.backgroundColor = "";
+        }
+        document.getElementById(cityName).style.display = "block";
+        elmnt.style.backgroundColor = color;
+    }
+    // Get the element with id="defaultOpen" and click on it
+    document.getElementById("defaultOpen").click();
+
+    var base_trx_add = "https://rinkeby.etherscan.io/tx/";
+    if (typeof web3 !== 'undefined') {
+        web3 = new Web3(web3.currentProvider);
+    } else {
+        // set the provider you want from Web3.providers
+        web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
+    }
+    web3.eth.defaultAccount = web3.eth.accounts[0];
+    abi = JSON.parse('[{"constant":true,"inputs":[{"name":"_find_car","type":"string"}],"name":"getDetailsOfCar","outputs":[{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"},{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_car_license_plate","type":"string"},{"name":"_car_make","type":"string"},{"name":"_car_name","type":"string"},{"name":"_car_type","type":"string"},{"name":"_apk_date","type":"string"},{"name":"_car_usage_type","type":"string"},{"name":"_car_first_colour","type":"string"},{"name":"_car_economy_label","type":"string"}],"name":"setNewCar","outputs":[],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"","type":"uint256"}],"name":"cars_list","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"getAllCars","outputs":[{"name":"","type":"string[]"}],"payable":false,"stateMutability":"view","type":"function"}]');
+    var CarTrustQuotientContract = web3.eth.contract(abi);
+    var CarTrustQuotient = CarTrustQuotientContract.at('0x18bb19a41ce9e53f556ca03f05b860fa879457f3');
+    function getCarDetails() {
+      var carMake,
+      carName,
+      carType,
+      carApkDate,
+      carUsageType,
+      carFirstColour,
+      carEconomyLabel,
+        carLicensePlate = $("#car").val();
+
+        CarTrustQuotient.getDetailsOfCar(carLicensePlate, function (error, result) {
+            if (!error) {
+              carMake = result[0];
+              carName = result[1];
+              carType = result[2];
+              carApkDate = result[3];
+              carUsageType = result[4];
+              carFirstColour = result[5];
+              carEconomyLabel = result[6];
+               finalContent="<p>Car Make: "+carMake+"</p>"+
+               "<p>Car Name: "+carName+"</p>"+
+               "<p>Car Type: "+carType+"</p>"+
+               "<p>APK Validity: "+carApkDate+"</p>"+
+               "<p>Car Usage Type: "+carUsageType+"</p>"+
+               "<p>First Colour of Car: "+carFirstColour+"</p>"+
+               "<p>Car Economy Label: "+carEconomyLabel+"</p>";
+
+                $("#generic_return").html(finalContent);
+                console.log(result);
+            }
+            else
+                console.error(error);
+        });
+    }
+
+    function setCarDetails() {
+        var xmlhttp = new XMLHttpRequest();
+        carLicensePlate = $("#car").val()
+        xmlhttp.open("GET", "https://opendata.rdw.nl/resource/m9d7-ebf2.geojson?kenteken=" + carLicensePlate, true);
+        xmlhttp.send();
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {
+                var myObj = JSON.parse(this.responseText);
+                console.log(myObj)
+                carMake = myObj.features[0].properties.merk || "Not available"
+                carName = myObj.features[0].properties.handelsbenaming || "Not available"
+                carType = myObj.features[0].properties.inrichting || "Not available"
+                carApkDate = myObj.features[0].properties.vervaldatum_apk || "Not available"
+                carUsageType = myObj.features[0].properties.voertuigsoort || "Not available"
+                carFirstColour = myObj.features[0].properties.eerste_kleur || "Not available"
+                carEconomyLabel = myObj.features[0].properties.zuinigheidslabel || "Not available"
+                console.log(carLicensePlate, carMake, carName, carType, carApkDate, carUsageType, carFirstColour, carEconomyLabel)
+                CarTrustQuotient.setNewCar(carLicensePlate, carMake, carName, carType, carApkDate, carUsageType, carFirstColour, carEconomyLabel, function (err, res) {
+                    if (err) { alert(err) }
+                    //alert(res);
+                    
+                    $("#trx_add").html("Transaction Link: <a href="+(base_trx_add+res)+">"+res+"</a>")
+                });
+            }
+        };
+
+    }
+</script>
+<script src="https://cdn.rawgit.com/ethereum/web3.js/develop/dist/web3.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+
+</html>
