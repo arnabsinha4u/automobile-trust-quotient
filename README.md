@@ -51,12 +51,13 @@ When cars are sold:
 
 + **Extend/Modify**
     - The smart contract code is shared, feel free to fork it, create your new implementation and create a new contract on the blockchain. Capture the new generated address for the contract.
-    - Current API's for automobile information is from RDW in The Netherlands, use different country automobile registry API's and make relevant changes in the solidity contract
-      ```function setCarDetails
-         ...
-         xmlhttp.open("GET", "https://opendata.rdw.nl/resource/m9d7-ebf2.geojson?kenteken=" ...
-         ...```
-    - Once this is complete, replace the new generated address in the html file with the existing smart contract address ```0x18bb19a41ce9e53f556ca03f05b860fa879457f3```. Modify the HTML code as needed.
+    - Current API's for automobile information is from RDW in The Netherlands, use different country automobile registry API's and make relevant changes in the solidity contract 
+    ```
+    ...
+    function setCarDetails
+    xmlhttp.open("GET", "https://opendata.rdw.nl/resource/m9d7-ebf2.geojson?kenteken="...
+    ```
+   - Once this is complete, replace the new generated address in the html file with the existing smart contract address ```0x18bb19a41ce9e53f556ca03f05b860fa879457f3```. Modify the HTML code as needed.
     - You can also change the test blockchain network from ```https://rinkeby.etherscan.io/tx/``` to others as deemded suitable.
 
 # Technology Stack
