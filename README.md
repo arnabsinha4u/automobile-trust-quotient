@@ -21,6 +21,7 @@ Today, when people go to buy a car:
  2) Drives the car around to get a feel of it
  3) Takes the car to a garage, pays and gets it checked
  4) Searches websites and try and get paid reports
+
 Based on the above factors, evidence and gut, the buyer decides, for or against buying the car
 Even after this, buyers often get a short term protection insurance, adding further onto the cost of buying the car.
 The extra cost that the buyer pays is 5-10%.
