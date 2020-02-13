@@ -1,5 +1,6 @@
 # Automobile Trust Quotient
 
+[![Build Status](https://travis-ci.org/arnabsinha4u/automobile-trust-quotient.svg?branch=master)](https://travis-ci.org/arnabsinha4u/automobile-trust-quotient)
 [![](https://images.microbadger.com/badges/image/arnabsinha4u/automobile-trust-quotient.svg)](https://microbadger.com/images/arnabsinha4u/automobile-trust-quotient "Get your own image badge on microbadger.com")
 [![](https://images.microbadger.com/badges/version/arnabsinha4u/automobile-trust-quotient.svg)](https://microbadger.com/images/arnabsinha4u/automobile-trust-quotient "Get your own version badge on microbadger.com")
 
