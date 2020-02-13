@@ -44,11 +44,13 @@ When cars are sold:
 <img src="images/automobile-trust-quotient-data-entry.jpg" width="400"> <img src="images/automobile-trust-quotient-data-retrieval.jpg" width="400">
 
 - **Proof of entry in Etherium Blockchain**
+
 <img src="images/automobile-trust-quotient-data-on-blockchain.jpg" width="400">
 
 ## How to use, extend/modify this
 
 - **Use**
+
   - Clone the repository
   - Deploy the images directory and automobile-trust-quotient.html in a httpd server
   - Start up the server
@@ -56,6 +58,7 @@ When cars are sold:
   - Note: It does not consider SSL etc or any enterprise grade deployment
 
 - **Extend/Modify**
+
   - The smart contract code is shared, feel free to fork it, create your new implementation and create a new contract on the blockchain. Capture the new generated address for the contract.
   - Current API's for automobile information is from RDW in The Netherlands, use different country automobile registry API's and make relevant changes in the solidity contract
 
